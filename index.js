@@ -26,6 +26,24 @@ function main(url){
         .forEach(repo=>repoDetails(repo,ul));
             
         })
-    
-    
+}
+function repoDetails(repo,ul){
+    const li=createAndAppend("li",ul)
+    const table=createAndAppend("table",li)
+    const title = ['Repository:', 'Descripton:', 'Forks:','Updated:'];
+    const dataKeys =['name','description','forks','updated_at'];
+    for(let i = 0; i < titles.length; i++){
+        const tr = createAndAppend('tr',table);
+        createAndAppend('th',tr,{text:titles[i]});
+        if(i > 0){
+            createAndAppend('td',tr,{text: repo[dataKeys[i]]});
+        }else{
+            const td = createAndAppend('td',tr);
+            createAndAppend('a',td,{
+                href: repo.html_url,
+                text: repo.name,
+                target: '_blank',
+            });
+        }
+    }
 }
