@@ -15,7 +15,7 @@
         xhr.send()
     }
     function main(url){
-        createAndAppend("h3",root,{ text:"HYF repositories"})
+        createAndAppend("h3",root,{ text:"Mohit Dhiman repositories"})
         fetchJSON(url,(error,response)=>{
             if(error){
                 createAndAppend("div",root,{text:error.message,class:`alert-error`});
@@ -64,6 +64,6 @@
      return el;
     };
     
-    const HYF_REPOS_URL ='https://api.github.com/orgs/HackYourFuture/repos?per_page=100';
+    const HYF_REPOS_URL ='https://api.github.com/users/mohitdhimanskt/repos?per_page=100';
     window.onload = () => main(HYF_REPOS_URL);
     
