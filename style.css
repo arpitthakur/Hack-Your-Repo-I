@@ -44,9 +44,4 @@
     color: brown;
     background-color: #F0C6CA;
   }
-  @media (max-width: 650px) {
-    table, header {
-      width: 100%;
-      margin: 0 auto;
-    }
-  } 
+  
